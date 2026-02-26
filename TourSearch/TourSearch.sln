@@ -1,0 +1,28 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourSearch", "TourSearch\TourSearch.csproj", "{7DC36E9F-C9A4-4391-A3D9-79AAE61F2894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourSearch.Tests", "TourSearch.Tests\TourSearch.Tests.csproj", "{8DC36E9F-C9A4-4391-A3D9-79AAE61F2895}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DC36E9F-C9A4-4391-A3D9-79AAE61F2894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC36E9F-C9A4-4391-A3D9-79AAE61F2894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC36E9F-C9A4-4391-A3D9-79AAE61F2894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC36E9F-C9A4-4391-A3D9-79AAE61F2894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC36E9F-C9A4-4391-A3D9-79AAE61F2895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC36E9F-C9A4-4391-A3D9-79AAE61F2895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC36E9F-C9A4-4391-A3D9-79AAE61F2895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC36E9F-C9A4-4391-A3D9-79AAE61F2895}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

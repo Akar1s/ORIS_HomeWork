@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - G Adventures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #f5f3f7;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 420px;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 16px;
+            position: relative;
+        }
+        
+        .logo-outer-ring {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 3px solid #513393;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+        }
+        
+        .logo-text-curved {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .logo-inner-circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2.5px solid #513393;
+            border-radius: 50%;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-g {
+            font-size: 24px;
+            font-weight: 700;
+            color: #513393;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: #fafafa;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #513393;
+            box-shadow: 0 0 0 3px rgba(81, 51, 147, 0.1);
+            background: white;
+        }
+        
+        .form-group input::placeholder { color: #999; }
+        .form-group input.error { border-color: #e53935; }
+        
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .error-message.show { display: block; }
+        
+        .btn-primary {
+            width: 100%;
+            padding: 16px;
+            background: #513393;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .btn-primary:hover { background: #3d2570; }
+        
+        .links {
+            margin-top: 24px;
+            text-align: center;
+        }
+        
+        .links p {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .links a {
+            color: #513393;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .links a:hover { text-decoration: underline; }
+        
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+        
+        .help-text {
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+        }
+        
+        .help-text a {
+            color: #513393;
+            text-decoration: none;
+        }
+        
+        .field-error {
+            color: #c62828;
+            font-size: 12px;
+            margin-top: 6px;
+            display: none;
+        }
+        
+        .field-error.show { display: block; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <img src="/static/images/g-icon.svg" alt="G Adventures" style="width: 80px; height: 80px;">
+            </div>
+            <h1>Welcome</h1>
+            <p class="subtitle">Log in to G Adventures to continue</p>
+        </div>
+        
+        <div class="error-message {{#if ErrorMessage}}show{{/if}}">
+            {{ErrorMessage}}
+        </div>
+        
+        <form method="post" action="/account/login" id="login-form">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email address*" required autocomplete="email" />
+                <div class="field-error" id="email-error"></div>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password*" required autocomplete="current-password" />
+                <div class="field-error" id="password-error"></div>
+            </div>
+            
+            <button type="submit" class="btn-primary">Continue</button>
+        </form>
+        
+        <div class="links">
+            <p>Don't have an account? <a href="/account/register">Sign up</a></p>
+            <div class="divider"></div>
+            <p class="help-text">Need Help? Check our <a href="/placeholder">Frequently Asked Questions</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('login-form');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            
+            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+            
+            function validateEmail() {
+                const email = emailInput.value.trim();
+                const errorEl = document.getElementById('email-error');
+                
+                if (!email) {
+                    errorEl.textContent = 'Email is required';
+                    errorEl.classList.add('show');
+                    emailInput.classList.add('error');
+                    return false;
+                }
+                
+                if (!emailRegex.test(email)) {
+                    errorEl.textContent = 'Please enter a valid email address';
+                    errorEl.classList.add('show');
+                    emailInput.classList.add('error');
+                    return false;
+                }
+                
+                errorEl.classList.remove('show');
+                emailInput.classList.remove('error');
+                return true;
+            }
+            
+            function validatePassword() {
+                const password = passwordInput.value;
+                const errorEl = document.getElementById('password-error');
+                
+                if (!password) {
+                    errorEl.textContent = 'Password is required';
+                    errorEl.classList.add('show');
+                    passwordInput.classList.add('error');
+                    return false;
+                }
+                
+                errorEl.classList.remove('show');
+                passwordInput.classList.remove('error');
+                return true;
+            }
+            
+            emailInput.addEventListener('blur', validateEmail);
+            passwordInput.addEventListener('blur', validatePassword);
+            
+            form.addEventListener('submit', function(e) {
+                const emailValid = validateEmail();
+                const passwordValid = validatePassword();
+                
+                if (!emailValid || !passwordValid) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

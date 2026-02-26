@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{Title}}</title>
+    <link rel="stylesheet" href="/static/css/landing.css">
+</head>
+<body>
+    <!-- Header - Pill Shape -->
+    <header class="main-header">
+        <div class="header-pill">
+            <!-- Logo -->
+            <a href="/" class="logo" style="text-decoration: none;">
+                <img src="/static/images/g-logo.svg" alt="G Adventures" style="height: 32px;">
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav-links">
+                <a href="/search">Destinations</a>
+                <a href="/search">Travel Styles</a>
+                <a href="/search">Explore by Interests</a>
+                <a href="/search">Deals</a>
+                <a href="/placeholder">Why Travel with G</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" id="header-search">
+                    <button class="search-btn" onclick="window.location.href='/search'">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <svg class="header-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <a href="/account/login">
+                    <svg class="header-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Travel your <span class="hero-title-italic">heart</span> out
+            </h1>
+
+            <!-- Search Form -->
+            <form class="hero-search" action="/search" method="get">
+                <div class="hero-search-field">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <input type="text" name="destination" placeholder="Where to" class="hero-input">
+                </div>
+                <div class="hero-divider"></div>
+                <div class="hero-search-field">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <input type="text" name="when" placeholder="When" class="hero-input">
+                </div>
+                <button type="submit" class="hero-search-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Small Group Adventures Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">
+                Small group adventures that<br>bring the world closer
+            </h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 6h18M3 18h18" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Building community and redefining travel since 1990.</h3>
+                    <p class="card-text">Our Chief Experience Officers have local smarts, big energy, and serious skills to make your trip unforgettable.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">For every traveller. On every continent. Yup, even Antarctica.</h3>
+                    <p class="card-text">Small groups mean big connections. And with travellers from all over, every trip feels globally inspired.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Uplifting communities everywhere we go. Period.</h3>
+                    <p class="card-text">Travel that helps people, places, and the planet � powered by our Community Tourism model.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="section section-gradient">
+        <div class="container">
+            <p class="section-label">Popular deals for you</p>
+            <div class="section-header">
+                <h2 class="section-title">The Great Adventure Sale</h2>
+                <button class="btn btn-primary" onclick="window.location.href='/placeholder'">View Deals</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations Section -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Popular Destinations</p>
+            <h2 class="section-title">
+                Bucket list meets bold<br>discoveries
+            </h2>
+
+            <div class="destinations-grid">
+                <div class="destination-card" onclick="window.location.href='/search?destination=Antarctica'">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80" alt="Antarctica">
+                    <div class="destination-overlay"></div>
+                    <h3 class="destination-title">Antarctica</h3>
+                </div>
+
+                <div class="destination-card" onclick="window.location.href='/search?destination=Mexico'">
+                    <img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80" alt="Mexico">
+                    <div class="destination-overlay"></div>
+                    <h3 class="destination-title">Mexico</h3>
+                </div>
+
+                <div class="destination-card" onclick="window.location.href='/search?destination=Peru'">
+                    <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80" alt="Peru">
+                    <div class="destination-overlay"></div>
+                    <h3 class="destination-title">Peru</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Travel With Us Section -->
+    <section class="section section-light">
+        <div class="container">
+            <p class="section-label">Why travel with G Adventures</p>
+            <h2 class="section-title section-title-single">
+                Six reasons you'll love us
+            </h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="8" r="4" stroke-width="2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Guides so good we call them CEOs</h3>
+                    <p class="feature-text">Our Chief Experience Officers have local smarts, big energy, and serious skills to make your trip unforgettable.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Small groups, lots of passports</h3>
+                    <p class="feature-text">Small groups mean big connections. And with travellers from all over, every trip feels globally inspired.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">As ungrouped as it gets</h3>
+                    <p class="feature-text">The safety of a group, with freedom to explore on your own terms.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Immersive experiences are how we roll</h3>
+                    <p class="feature-text">Get hands-on with culture, food, and local life. No sidelines, just full-on adventure.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Doing good has never been so fun</h3>
+                    <p class="feature-text">Travel that helps people, places, and the planet � powered by our Community Tourism model.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Book with all the confidence in the world</h3>
+                    <p class="feature-text">No stress here. Flexible policies, guaranteed departures, and support whenever you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section">
+        <div class="container">
+            <div class="reviews-grid">
+                <div class="reviews-header">
+                    <p class="section-label">G Adventures reviews</p>
+                    <h2 class="section-title">
+                        Don't just<br>take our word<br>for it
+                    </h2>
+                </div>
+
+                <div class="reviews-content">
+                    <div class="rating-summary">
+                        <div class="rating-stars">
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <span class="rating-number">4.8</span>
+                        <span class="rating-text">/ 5 � 143,735 reviews</span>
+                    </div>
+
+                    <div class="rating-bars">
+                        <div class="rating-bar-row">
+                            <span class="rating-label">Excellent</span>
+                            <div class="rating-bar-bg">
+                                <div class="rating-bar-fill" style="width: 81%"></div>
+                            </div>
+                            <span class="rating-percent">81%</span>
+                        </div>
+                        <div class="rating-bar-row">
+                            <span class="rating-label">Great</span>
+                            <div class="rating-bar-bg">
+                                <div class="rating-bar-fill" style="width: 15%"></div>
+                            </div>
+                            <span class="rating-percent">15%</span>
+                        </div>
+                        <div class="rating-bar-row">
+                            <span class="rating-label">Average</span>
+                            <div class="rating-bar-bg">
+                                <div class="rating-bar-fill" style="width: 4%"></div>
+                            </div>
+                            <span class="rating-percent">4%</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <svg class="star-small" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <svg class="star-small" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <svg class="star-small" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <svg class="star-small" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <svg class="star-small" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <p class="review-text">
+                            "Amazing experience, worth every step taken. Franco & Fredrico, if you're lucky enough to get either of them to you, then you will enjoy your trip 100%"
+                        </p>
+                        <div class="review-footer">
+                            <div>
+                                <p class="review-author">James M.</p>
+                                <p class="review-date">July 25</p>
+                            </div>
+                            <p class="review-source">Collected by G Adventures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <h2 class="footer-title">
+                    Where's your heart calling you?
+                </h2>
+                <div class="footer-countries">
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Peru'">Peru</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=South+Africa'">South Africa</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Thailand'">Thailand</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Zimbabwe'">Zimbabwe</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Vietnam'">Vietnam</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Indonesia'">Indonesia</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Tanzania'">Tanzania</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Italy'">Italy</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Ecuador'">Ecuador</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Morocco'">Morocco</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Botswana'">Botswana</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Kenya'">Kenya</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Greece'">Greece</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=United+States'">United States</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Croatia'">Croatia</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Namibia'">Namibia</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=India'">India</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Spain'">Spain</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Mexico'">Mexico</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Costa+Rica'">Costa Rica</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Montenegro'">Montenegro</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Argentina'">Argentina</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Cambodia'">Cambodia</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Turkey'">Turkey</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Albania'">Albania</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Portugal'">Portugal</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Japan'">Japan</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Chile'">Chile</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=Canada'">Canada</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=France'">France</button>
+                    <button class="footer-link" onclick="window.location.href='/search?destination=China'">China</button>
+                    <button class="footer-link-bold">Show More</button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-logo">
+                        <img src="/static/images/g-logo.svg" alt="G Adventures" style="height: 28px; filter: brightness(0) invert(1);">
+                    </div>
+
+                    <div class="footer-links">
+                        <button class="footer-link" onclick="window.location.href='/placeholder'">Terms & Conditions</button>
+                        <button class="footer-link" onclick="window.location.href='/placeholder'">Privacy Policy</button>
+                        <button class="footer-link" onclick="window.location.href='/placeholder'">Cookie Preferences</button>
+                        <button class="footer-link" onclick="window.location.href='/placeholder'">Accessibility Statement</button>
+                    </div>
+                </div>
+
+                <p class="footer-copyright">
+                    2025 G Adventures. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

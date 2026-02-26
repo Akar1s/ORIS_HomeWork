@@ -1,0 +1,63 @@
+
+
+
+services:
+  
+  db:
+    image: postgres:15-alpine
+    container_name: toursearch_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: toursearch
+      POSTGRES_INITDB_ARGS: "-E UTF8"
+    ports:
+      
+      - "5433:5432"
+    volumes:
+      
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - toursearch_network
+
+  
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: toursearch_app
+    restart: unless-stopped
+    environment:
+      
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: toursearch
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      
+      YANDEX_SMTP_PASSWORD: ${YANDEX_SMTP_PASSWORD:-your_password_here}
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - toursearch_network
+
+
+volumes:
+  postgres_data:
+    driver: local
+
+
+networks:
+  toursearch_network:
+    driver: bridge

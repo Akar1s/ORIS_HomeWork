@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Registration - G Adventures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #fff;
+            min-height: 100vh;
+        }
+        
+        
+        .header {
+            background: #513393;
+            padding: 16px 40px;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-link img {
+            height: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.15);
+            border-radius: 25px;
+            padding: 8px 16px;
+        }
+        
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 14px;
+            width: 120px;
+            outline: none;
+        }
+        
+        .search-box input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .icon-btn {
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 40px 80px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 32px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        
+        .form-card {
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 32px;
+            position: relative;
+        }
+        
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #fafafa;
+        }
+        
+        .form-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #513393;
+        }
+        
+        .form-group input::placeholder {
+            color: #999;
+        }
+        
+        .form-group input.error {
+            border-color: #e53935;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #513393;
+        }
+        
+        .checkbox-group label {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: #513393;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background: #3d2570;
+        }
+        
+        .privacy-link {
+            display: block;
+            margin-top: 16px;
+            color: #513393;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .privacy-link:hover {
+            text-decoration: underline;
+        }
+        
+        
+        .side-panel section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .side-panel section:last-child {
+            border-bottom: none;
+        }
+        
+        .side-panel h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+        
+        .side-panel a {
+            color: #513393;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .side-panel a:hover {
+            text-decoration: underline;
+        }
+        
+        .side-panel p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+        
+        
+        .message {
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .message.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .message.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .field-error {
+            color: #c62828;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        
+        
+        .footer {
+            background: #f8f8f8;
+            padding: 40px;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+        
+        .footer-col a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-col a:hover {
+            color: #513393;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .footer-bottom a {
+            color: #666;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo-link">
+                <img src="/static/images/g-logo.svg" alt="G Adventures">
+            </a>
+            
+            <nav class="nav-links">
+                <a href="/search">Destinations</a>
+                <a href="/search">Travel Styles</a>
+                <a href="/search">Explore by Interests</a>
+                <a href="/search">Deals</a>
+                <a href="/placeholder">Why Travel with G</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <button class="icon-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>ACCOUNT REGISTRATION</h1>
+        
+        <div class="content-grid">
+            <!-- Registration Form -->
+            <div class="form-card">
+                <h2>REGISTRATION</h2>
+                
+                {{#if ErrorMessage}}
+                <div class="message error">{{ErrorMessage}}</div>
+                {{/if}}
+                
+                {{#if SuccessMessage}}
+                <div class="message success">{{SuccessMessage}}</div>
+                {{/if}}
+                
+                <form method="post" action="/account/register" id="register-form">
+                    <div class="form-group">
+                        <input type="text" name="first_name" placeholder="First name as per passport" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="last_name" placeholder="Last name(s) as per passport" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required />
+                        <div class="field-error" id="email-error"></div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="booked" name="booked">
+                        <label for="booked">Have you booked with us?</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required />
+                        <div class="field-error" id="password-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="confirm" name="confirm" placeholder="Confirm password" required />
+                        <div class="field-error" id="confirm-error"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Register</button>
+                    
+                    <a href="/placeholder" class="privacy-link">Privacy Policy</a>
+                </form>
+            </div>
+            
+            <!-- Side Panel -->
+            <div class="side-panel">
+                <section>
+                    <h3>Already have an account?</h3>
+                    <a href="/account/login">Login here</a>
+                </section>
+                
+                <section>
+                    <h3>Are you an agent?</h3>
+                    <a href="/placeholder">Sign up</a>
+                    <p>for our agent site (Sherpa) now!</p>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>G Adventures</h4>
+                    <a href="/placeholder">About us</a>
+                    <a href="/placeholder">Values</a>
+                    <a href="/placeholder">LGBTQ+ inclusivity</a>
+                    <a href="/placeholder">Careers</a>
+                    <a href="/placeholder">Media centre</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="/placeholder">Contact us</a>
+                    <a href="/placeholder">FAQs</a>
+                    <a href="/placeholder">Travel resources</a>
+                    <a href="/placeholder">Pre-departure info</a>
+                    <a href="/placeholder">Safety updates</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="/placeholder">Blog</a>
+                    <a href="/placeholder">Newsletter</a>
+                    <a href="/placeholder">The Great Adventurers Club</a>
+                    <a href="/placeholder">Affiliate program</a>
+                    <a href="/placeholder">Brochures</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Travel Agents</h4>
+                    <a href="/placeholder">Agent login</a>
+                    <a href="/placeholder">Agent registration</a>
+                    <a href="/placeholder">Find an agent</a>
+                </div>
+                <div class="footer-col">
+                    <h4>G NATION</h4>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <span>&copy; 2025 G Adventures. All rights reserved.</span>
+                <div>
+                    <a href="/placeholder">Terms and Conditions</a>
+                    <a href="/placeholder">Privacy Policy</a>
+                    <a href="/placeholder">Manage Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('register-form');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const confirmInput = document.getElementById('confirm');
+            
+            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+            
+            function showError(el, msg) {
+                el.textContent = msg;
+                el.style.display = 'block';
+            }
+            
+            function hideError(el) {
+                el.style.display = 'none';
+            }
+            
+            function validateEmail() {
+                const errorEl = document.getElementById('email-error');
+                const email = emailInput.value.trim();
+                
+                if (!email) {
+                    showError(errorEl, 'Email is required');
+                    emailInput.classList.add('error');
+                    return false;
+                }
+                
+                if (!emailRegex.test(email)) {
+                    showError(errorEl, 'Please enter a valid email');
+                    emailInput.classList.add('error');
+                    return false;
+                }
+                
+                hideError(errorEl);
+                emailInput.classList.remove('error');
+                return true;
+            }
+            
+            function validatePassword() {
+                const errorEl = document.getElementById('password-error');
+                const password = passwordInput.value;
+                
+                if (!password) {
+                    showError(errorEl, 'Password is required');
+                    passwordInput.classList.add('error');
+                    return false;
+                }
+                
+                if (!passwordRegex.test(password)) {
+                    showError(errorEl, 'Min 8 chars with uppercase, lowercase and number');
+                    passwordInput.classList.add('error');
+                    return false;
+                }
+                
+                hideError(errorEl);
+                passwordInput.classList.remove('error');
+                return true;
+            }
+            
+            function validateConfirm() {
+                const errorEl = document.getElementById('confirm-error');
+                
+                if (confirmInput.value !== passwordInput.value) {
+                    showError(errorEl, 'Passwords do not match');
+                    confirmInput.classList.add('error');
+                    return false;
+                }
+                
+                hideError(errorEl);
+                confirmInput.classList.remove('error');
+                return true;
+            }
+            
+            emailInput.addEventListener('blur', validateEmail);
+            passwordInput.addEventListener('blur', validatePassword);
+            confirmInput.addEventListener('blur', validateConfirm);
+            
+            form.addEventListener('submit', function(e) {
+                const v1 = validateEmail();
+                const v2 = validatePassword();
+                const v3 = validateConfirm();
+                
+                if (!v1 || !v2 || !v3) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
